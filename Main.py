@@ -22,7 +22,7 @@ def generate_tool_code():
     return response['choices'][0]['message']['content']
 
 def push_to_github(repl_name, code):
-    g = Github(os.environ["GITHUB_TOKEN"])
+    g = Github(os.environ["GH_TOKEN_SYSTEM"])
     repo = g.get_user().get_repo("Ai-tools-auto-factory")
     filename = f"tools/{repl_name}.html"
     repo.create_file(filename, "Add AI tool", code)
