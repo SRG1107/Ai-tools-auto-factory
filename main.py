@@ -57,7 +57,7 @@ def push_to_github(code, tool_name):
     except Exception as e:
         print(f"❌ GitHub push error: {e}")
 
-# ✅ MAIN LOOP — 15 Tools per run
+#✅ MAIN LOOP — 15 Tools per run
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M")
 for i in range(1, 16):
     print(f"\n🚀 Creating Tool {i}/15")
@@ -67,3 +67,4 @@ for i in range(1, 16):
         tool_name = f"Tool_{timestamp}_{i}"
         push_to_github(tool_code, tool_name)
     time.sleep(5)  # Respect GPT rate limit
+    
